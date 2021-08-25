@@ -5,5 +5,6 @@ node {
 
     customImage.inside {
         sh 'ls -l'
+        sh 'pip show flask'
     }
 }
