@@ -8,12 +8,16 @@ pipeline {
   stages{
     stage("Build") {
       steps {
-        dockerImage = docker.build docker_image
+        script {
+          dockerImage = docker.build docker_image
+        }
       }
     }
     stage("Push") {
      steps {
-       dockerImage.push("$BUILD_NUMBER")
+       script {
+         dockerImage.push("$BUILD_NUMBER")
+       }
      }
   }
 }
