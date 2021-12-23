@@ -13,3 +13,4 @@ pipeline {
      dockerImage.push("$BUILD_NUMBER")
   }
 }
+}
