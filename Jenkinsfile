@@ -7,10 +7,14 @@ pipeline {
   }
   stages{
     stage("Build") {
-     dockerImage = docker.build docker_image
+      steps {
+        dockerImage = docker.build docker_image
+      }
     }
     stage("Push") {
-     dockerImage.push("$BUILD_NUMBER")
+     steps {
+       dockerImage.push("$BUILD_NUMBER")
+     }
   }
 }
 }
