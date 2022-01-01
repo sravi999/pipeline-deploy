@@ -1,5 +1,6 @@
 pipeline {
   agent any
+  triggers { pollSCM('H/10 * * * *') }
   environment {
   docker_crds = credentials("DockerCreds")
   docker_image = "$docker_crds_USR/flask"
