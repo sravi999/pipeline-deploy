@@ -19,6 +19,13 @@ pipeline {
          dockerImage.push("$BUILD_NUMBER")
        }
      }
-  }
+    }
+    stage("Run") {
+     steps {
+       script {
+         dockerImage.run("-p 0.0.0.0:5000:80")
+       }
+     }
+    }
 }
 }
