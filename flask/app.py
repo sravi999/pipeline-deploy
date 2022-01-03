@@ -5,7 +5,7 @@ app=flask.Flask(__name__)
 class App(object):
 
     def home(self):
-        return "Welcome to flask"
+        return "Welcome to flask from docker instance"
 
     def test(self):
         return "test page"
